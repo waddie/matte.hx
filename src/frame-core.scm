@@ -7,8 +7,6 @@
 
 ;;; frame-core.scm - pure clip arithmetic for the centred measure.
 ;;;
-;;; Ported from helix-editor/helix#9838 (zen mode: zoom and max-width).
-;;;
 ;;; Helix clips the whole editor rect, not the text area: the view's gutter
 ;;; sits inside whatever is left, so the text column starts `gutter` cells to
 ;;; the right of the left clip. Equal visual margins therefore need an

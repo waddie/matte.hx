@@ -7,15 +7,12 @@
 
 ;;; zoom.scm - maximise the focused split, and put the others back.
 ;;;
-;;; Ported from helix-editor/helix#9838 (zen mode: zoom and max-width).
-;;;
 ;;; The editor clipping is global and is applied before the view tree is laid
 ;;; out, so it cannot maximise one split among several. Nothing enumerates
 ;;; views either. Zoom therefore walks focus with `rotate_view` to take a
 ;;; snapshot, closes the other splits with `wonly`, and rebuilds them from the
 ;;; snapshot afterwards. The arrangement, the documents and the selections all
-;;; come back; the proportions do not, because Helix divides a container evenly
-;;; and exposes no way to resize a split.
+;;; come back.
 ;;;
 ;;; The surviving view is reused for whichever leaf comes first in reading
 ;;; order, so the document that was focused can end up in a view created here.

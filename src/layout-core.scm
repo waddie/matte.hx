@@ -7,8 +7,6 @@
 
 ;;; layout-core.scm - pure split snapshot ordering and rebuild planning.
 ;;;
-;;; Ported from helix-editor/helix#9838 (zen mode: zoom and max-width).
-;;;
 ;;; Steel exposes no view tree, so zoom closes the other splits and rebuilds
 ;;; them afterwards from a snapshot. A record is
 ;;;

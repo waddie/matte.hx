@@ -7,8 +7,6 @@
 
 ;;; frame.scm - the centred measure.
 ;;;
-;;; Ported from helix-editor/helix#9838 (zen mode: zoom and max-width).
-;;;
 ;;; Helix has no getter for the editor clipping, nothing that reports the
 ;;; terminal size to a command, and no resize hook. All three are covered by
 ;;; one invisible component: a pushed layer is handed the full terminal rect on
