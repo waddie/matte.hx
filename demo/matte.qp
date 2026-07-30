@@ -1,0 +1,105 @@
+# matte.hx demo, for quipu (https://github.com/waddie/quipu).
+#
+# Run it from the repository root:
+#
+#   quipu demo/matte.qp
+#
+# or record it with asciinema:
+#
+#   asciinema rec demo/matte.cast -c "quipu -q -s sh demo/matte.qp"
+#
+# It starts Helix against demo/init.scm, so your own Steel config and keymap are
+# not involved. The keys it presses are bound there: space m m, z, Z, w and n.
+#
+# I render the asciinema cast to gif with agg like this (substitute a font you have installed):
+#
+#   agg --font-family "Berkeley Mono" --font-size 16 --line-height 1.2 --cols 120 --rows 36 demo/matte.cast demo/matte.gif
+#
+# And then optimise the gif with gifsicle:
+#
+#   gifsicle -O3 -i demo/matte.gif -o images/matte.gif --lossy=0 --loop
+
+@ size:120:36
+@ speed:0.06
+@ jitter:0.02
+
+# Edit this line if your checkout is elsewhere
+$ cd ~/source/matte.hx<ret>
+@ wait:0.5
+
+$ HELIX_STEEL_CONFIG=$PWD/demo hx matte.scm<ret>
+@ wait:2.5
+
+# Three files in three splits: one vertical, then split the right-hand one
+# across.
+$ :vsplit src/frame.scm<ret>
+@ wait:2.0
+$ :hsplit src/zoom.scm<ret>
+@ wait:2.5
+
+# Centre the text at the measure. The margin is around the editor as a whole,
+# splits and all.
+$ <space>
+@ wait:1.0
+$ m
+@ wait:1.0
+$ m
+@ wait:3.0
+$ <space>
+@ wait:0.5
+$ m
+@ wait:0.5
+$ m
+@ wait:2.0
+
+# Zoom the focused split, then put the other two back where they were.
+$ <space>
+@ wait:1.0
+$ m
+@ wait:1.0
+$ z
+@ wait:3.0
+$ <space>
+@ wait:0.5
+$ m
+@ wait:0.5
+$ z
+@ wait:3.0
+
+# Zen is the two together: zoom, then centre.
+$ <space>
+@ wait:1.0
+$ m
+@ wait:1.0
+$ Z
+@ wait:3.0
+
+# The measure takes a count. Narrow by 20 columns, widen by 30, narrow by 10.
+$ 20<space>
+@ wait:1.0
+$ m
+@ wait:1.0
+$ n
+@ wait:2.5
+$ 30<space>
+@ wait:1.0
+$ m
+@ wait:1.0
+$ w
+@ wait:2.5
+$ 10<space>
+@ wait:0.5
+$ m
+@ wait:0.5
+$ n
+@ wait:2.5
+
+# Out of zen, splits and margins both back as they were.
+$ <space>
+@ wait:0.5
+$ m
+@ wait:0.5
+$ Z
+@ wait:3.0
+
+$ :qa!<ret>

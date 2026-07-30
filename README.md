@@ -9,6 +9,11 @@ ask for them.
 
 `:zoom` maximises the focused split and puts the others back afterwards.
 
+## Demo
+
+![An asciinema recording of matte.hx in
+action](https://github.com/waddie/matte.hx/blob/main/images/matte.gif?raw=true)
+
 ## Install
 
 Requires a plugin-enabled Helix build. With
